@@ -1,5 +1,7 @@
 package offer;
 
+import structure.ListNode;
+
 public class Offer24 {
     public static ListNode reverseList(ListNode head) {
         if (head == null) {

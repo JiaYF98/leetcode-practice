@@ -1,19 +1,9 @@
 package offer;
 
+import structure.Node;
+
 import java.util.HashMap;
 import java.util.Map;
-
-class Node {
-    int val;
-    Node next;
-    Node random;
-
-    public Node(int val) {
-        this.val = val;
-        this.next = null;
-        this.random = null;
-    }
-}
 
 public class Offer35 {
     public Node copyRandomList(Node head) {
@@ -22,8 +12,8 @@ public class Offer35 {
             return null;
         }
 
-        Map<Integer, Node> originMap1 = new HashMap<>();    // 根据序号找到 offer.Node
-        Map<Node, Integer> originMap2 = new HashMap<>();    // 根据 offer.Node 找到序号
+        Map<Integer, Node> originMap1 = new HashMap<>();    // 根据序号找到 structure.Node
+        Map<Node, Integer> originMap2 = new HashMap<>();    // 根据 structure.Node 找到序号
         int count = 0;
 
         while (head != null) {

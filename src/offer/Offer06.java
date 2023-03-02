@@ -1,18 +1,11 @@
 package offer;
 
+import structure.ListNode;
+
 import java.util.ArrayList;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
-
 public class Offer06 {
-//    public int[] reversePrint(offer.ListNode head) {
+//    public int[] reversePrint(structure.ListNode head) {
 //        if (head == null) {
 //            return new int[0];
 //        }
