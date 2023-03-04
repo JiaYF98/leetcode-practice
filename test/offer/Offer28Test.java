@@ -1,8 +1,7 @@
-import offer.Offer28;
+package offer;
+
 import org.junit.Test;
 import structure.TreeNode;
-
-import java.util.TimerTask;
 
 public class Offer28Test {
     @Test

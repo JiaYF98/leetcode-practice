@@ -1,3 +1,5 @@
+package hot100;
+
 /*
 Given a string s, find the length of the longest substring without repeating characters.
 
@@ -28,7 +30,7 @@ Given a string s, find the length of the longest substring without repeating cha
 
 import java.util.*;
 
-public class Solution3 {
+public class Hot3 {
     public int lengthOfLongestSubstring(String s) {
         // 如果为空串直接返回 0
         if (s.length() == 0) {
@@ -79,11 +81,9 @@ public class Solution3 {
 
         return Math.max(longestSubstring.length(), temp.length());
     }
-}
 
-class Main {
     public static void main(String[] args) {
-        Solution3 solution = new Solution3();
+        Hot3 solution = new Hot3();
         String s1 = "abcabcbb";
         String s2 = "bbbbb";
         String s3 = "pwwkew";

@@ -1,4 +1,5 @@
-import offer.Offer26;
+package offer;
+
 import org.junit.Test;
 import structure.TreeNode;
 

@@ -1,4 +1,5 @@
-import offer.Offer10I;
+package offer;
+
 import org.junit.Test;
 
 public class Offer10ITest {
