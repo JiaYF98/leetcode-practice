@@ -8,6 +8,11 @@ public class ListNode {
         val = x;
     }
 
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
     public static ListNode createListNode(int[] nums) {
         if (nums.length == 0) {
             return null;
@@ -28,6 +33,7 @@ public class ListNode {
 
     public static void printListNode(ListNode head) {
         if (head == null) {
+            System.out.println("null");
             return;
         }
 
