@@ -1,8 +1,5 @@
 package hot100;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 public class Hot31 {
     /*
     思路：

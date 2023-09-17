@@ -3,7 +3,6 @@ package hot100;
 import structure.ListNode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 
 public class Hot23 {

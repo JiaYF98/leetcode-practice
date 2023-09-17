@@ -17,21 +17,13 @@ public class ListNode {
     }
 
     public static ListNode createListNode(int[] nums) {
-        if (nums.length == 0) {
-            return null;
+        ListNode dum = new ListNode(0);
+        ListNode head = dum;
+        for (int num : nums) {
+            head.next = new ListNode(num);
+            head = head.next;
         }
-
-        int len = nums.length;
-
-        ListNode head = new ListNode(nums[len - 1]);
-
-        for (int i = len - 2; i >= 0; i--) {
-            ListNode node = new ListNode(nums[i]);
-            node.next = head;
-            head = node;
-        }
-
-        return head;
+        return dum.next;
     }
 
     public static void printListNode(ListNode head) {

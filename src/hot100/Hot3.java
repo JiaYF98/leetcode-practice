@@ -33,7 +33,7 @@ import java.util.*;
 public class Hot3 {
     public int lengthOfLongestSubstring(String s) {
         // 如果为空串直接返回 0
-        if (s.length() == 0) {
+        if (s.isEmpty()) {
             return 0;
         }
 
