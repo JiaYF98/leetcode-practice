@@ -1,8 +1,5 @@
 package structure;
 
-import java.util.List;
-import java.util.ArrayList;
-
 public class TreeNode {
     public int val;
     public TreeNode left;
@@ -12,54 +9,37 @@ public class TreeNode {
         val = x;
     }
 
-    // 序列化编码规则请参考：
-    // https://www.hello-algo.com/chapter_tree/array_representation_of_tree/
-    // 二叉树的数组表示：
-    // [1, 2, 3, 4, None, 6, 7, 8, 9, None, None, 12, None, None, 15]
-    // 二叉树的链表表示：
-    //             /——— 15
-    //         /——— 7
-    //     /——— 3
-    //    |    \——— 6
-    //    |        \——— 12
-    // ——— 1
-    //     \——— 2
-    //        |    /——— 9
-    //         \——— 4
-    //             \——— 8
-
-    /* 将列表反序列化为二叉树：递归 */
-    private static TreeNode listToTreeDFS(List<Integer> arr, int i) {
-        if (i < 0 || i >= arr.size() || arr.get(i) == null) {
+    public static TreeNode listToTree(Integer[] trees) {
+        if (trees.length == 0)
             return null;
+        TreeNode[] treeNodes = new TreeNode[trees.length + 1];
+        for (int i = 1; i < treeNodes.length; i++) {
+            if (trees[i - 1] == null) {
+                treeNodes[i] = null;
+            } else {
+                treeNodes[i] = new TreeNode(trees[i - 1]);
+            }
         }
-        TreeNode root = new TreeNode(arr.get(i));
-        root.left = listToTreeDFS(arr, 2 * i + 1);
-        root.right = listToTreeDFS(arr, 2 * i + 2);
-        return root;
-    }
 
-    /* 将列表反序列化为二叉树 */
-    public static TreeNode listToTree(List<Integer> arr) {
-        return listToTreeDFS(arr, 0);
-    }
-
-    /* 将二叉树序列化为列表：递归 */
-    private static void treeToListDFS(TreeNode root, int i, List<Integer> res) {
-        if (root == null)
-            return;
-        while (i >= res.size()) {
-            res.add(null);
+        TreeNode treeNode;
+        //这个只适用于完全二叉树
+        //        for (int i = 1; i < treeNodes.length; i++) {
+        //            treeNode = treeNodes[i];
+        //            if (treeNode == null) continue;
+        //            if (2 * i < treeNodes.length)
+        //                treeNode.left = treeNodes[2 * i];
+        //            if (2 * i + 1 < treeNodes.length)
+        //                treeNode.right = treeNodes[2 * i + 1];
+        //        }
+        for (int i = 1, index = 2; i < treeNodes.length && index < treeNodes.length; i++) {
+            treeNode = treeNodes[i];
+            if (treeNode == null) continue;
+            treeNode.left = treeNodes[index];
+            if (index + 1 < treeNodes.length)
+                treeNode.right = treeNodes[index + 1];
+            index += 2;
         }
-        res.set(i, root.val);
-        treeToListDFS(root.left, 2 * i + 1, res);
-        treeToListDFS(root.right, 2 * i + 2, res);
+        return treeNodes[1];
     }
 
-    /* 将二叉树序列化为列表 */
-    public static List<Integer> treeToList(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        treeToListDFS(root, 0, res);
-        return res;
-    }
 }

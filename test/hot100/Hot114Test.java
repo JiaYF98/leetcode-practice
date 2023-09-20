@@ -3,14 +3,12 @@ package hot100;
 import org.junit.Test;
 import structure.TreeNode;
 
-import java.util.Arrays;
-
 public class Hot114Test {
     private final Hot114 hot114 = new Hot114();
 
     @Test
     public void test1() {
-        TreeNode root = TreeNode.listToTree(Arrays.asList(1, 2, 5, 3, 4, null, 6));
+        TreeNode root = TreeNode.listToTree(new Integer[]{1, 2, 5, 3, 4, null, 6});
 
         hot114.flatten(root);
 
