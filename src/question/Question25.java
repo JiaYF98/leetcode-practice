@@ -2,7 +2,8 @@ package question;
 
 import structure.ListNode;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Question25 {
     public ListNode reverseKGroup(ListNode head, int k) {
@@ -10,7 +11,7 @@ public class Question25 {
             return null;
         }
 
-        Stack<ListNode> stack = new Stack<>();
+        Deque<ListNode> stack = new ArrayDeque<>();
         ListNode temp = head;
         for (int i = 0; i < k - 1; i++) {
             if (temp.next == null) {
